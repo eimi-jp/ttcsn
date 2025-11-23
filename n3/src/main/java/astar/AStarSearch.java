@@ -1,4 +1,4 @@
-package org.example;
+package astar;
 
 
 import java.util.ArrayList;
