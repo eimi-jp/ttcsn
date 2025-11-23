@@ -1,5 +1,6 @@
 package bfs;
 
+import mazegen.Graph;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
@@ -9,14 +10,12 @@ public class Bfs {
     private final int V; // Số đỉnh
     private final ArrayList<ArrayList<Integer>> adj; // danh sách đỉnh kề
 
-//    khởi tạo đồ thị
-    public Bfs(int v) {
-        this.V = v;
-        adj = new ArrayList<>(v);
-        for (int i = 0; i < v; i++) {
-            adj.add(new ArrayList<>());
-        }
+    //    khởi tạo đồ thị từ Graph
+    public Bfs(Graph graph) {
+        this.V = graph.getV();
+        this.adj = graph.getAdj();
     }
+
     /**
      *
      * @param u Đỉnh kề

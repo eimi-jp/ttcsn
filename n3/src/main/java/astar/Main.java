@@ -21,8 +21,10 @@ public class Main {
         int[][] maze = mg.generate();
         mg.printMaze();
 
-        int startX = 1, startY = 1;
-        int endX = 4, endY = 5;
+        int startX = mg.getStart()[0];
+        int startY = mg.getStart()[1];
+        int endX = mg.getEnd()[1];
+        int endY = mg.getEnd()[0];
 
         AStarSearch aStar = new AStarSearch(maze);
 

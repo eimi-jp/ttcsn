@@ -1,32 +1,37 @@
 package bfs;
 
+import mazegen.Graph;
+import mazegen.GraphBuilder;
+import mazegen.MazeGenerator;
+
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        int V = 8;
-        Bfs g = new Bfs(V);
+        MazeGenerator mg = new MazeGenerator(21, 15);
+        int[][] maze = mg.generate();
+        mg.printMaze();
 
-        // các cạnh đồ thị
-        g.addEdge(0, 1);
-        g.addEdge(0, 3);
-        g.addEdge(1, 2);
-        g.addEdge(3, 4);
-        g.addEdge(3, 7);
-        g.addEdge(4, 5);
-        g.addEdge(4, 6);
-        g.addEdge(4, 7);
-        g.addEdge(5, 6);
-        g.addEdge(6, 7);
+        Graph g = GraphBuilder.fromMaze(maze);
+        g.printAsTree(0);
+        Bfs bfs = new Bfs(g);
 
-        Scanner sc = new Scanner(System.in);
-        System.out.println("nhập vào điểm bắt đầu:");
-        int startNode= sc.nextInt();
-        sc.nextLine();
-        System.out.println("Nhập vào điểm kết thúc:");
-        int endNode=sc.nextInt();
-        sc.nextLine();
+        int[] start = mg.getStart(); // {1,1}
+        int[] end = mg.getEnd();     // farthest cell
+        int startNode = start[1] * 21 + start[0];
+        int endNode = end[1] * 21 + end[0];
+        bfs.findShortestPath(startNode, endNode);
 
-        g.findShortestPath(startNode, endNode);
+
+
+//        Scanner sc = new Scanner(System.in);
+//        System.out.println("nhập vào điểm bắt đầu:");
+//        int startNode= sc.nextInt();
+//        sc.nextLine();
+//        System.out.println("Nhập vào điểm kết thúc:");
+//        int endNode=sc.nextInt();
+//        sc.nextLine();
+
+       // bfs.findShortestPath(startNode, endNode);
     }
 }

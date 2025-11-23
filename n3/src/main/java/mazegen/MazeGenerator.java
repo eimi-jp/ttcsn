@@ -1,5 +1,7 @@
 package mazegen;
 
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Random;
 
 public class MazeGenerator {
@@ -66,6 +68,35 @@ public class MazeGenerator {
             arr[i] = arr[j];
             arr[j] = tmp;
         }
+    }
+
+    public int[] getStart() {
+        return new int[]{1,1}; // mặc định là cell đầu carve
+    }
+
+    public int[] getEnd() {
+        boolean[][] visited = new boolean[height][width];
+        Queue<int[]> q = new LinkedList<>();
+        q.add(new int[]{1,1,0}); // x, y, distance
+        visited[1][1] = true;
+
+        int[] farthest = {1,1,0};
+
+        int[][] dirs = {{1,0},{-1,0},{0,1},{0,-1}};
+        while(!q.isEmpty()) {
+            int[] cur = q.poll();
+            int x = cur[0], y = cur[1], d = cur[2];
+            if(d > farthest[2]) farthest = cur;
+
+            for(int[] dir : dirs) {
+                int nx = x + dir[0], ny = y + dir[1];
+                if(nx>0 && ny>0 && nx<width && ny<height && !visited[ny][nx] && maze[ny][nx]==PATH) {
+                    visited[ny][nx] = true;
+                    q.add(new int[]{nx, ny, d+1});
+                }
+            }
+        }
+        return new int[]{farthest[0], farthest[1]}; // x,y end
     }
 
     public void printMaze() {
