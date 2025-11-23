@@ -1,20 +1,27 @@
 package astar;
 
+import mazegen.MazeGenerator;
+
 import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
         
 
-        int[][] maze = {
-            {0, 0, 1, 0, 0, 0},
-            {0, 0, 1, 0, 1, 0},
-            {0, 0, 0, 0, 1, 0},
-            {0, 1, 1, 1, 1, 0},
-            {0, 0, 0, 0, 0, 0}
-        };
+//        int[][] maze = {
+//            {0, 0, 1, 0, 0, 0},
+//            {0, 0, 1, 0, 1, 0},
+//            {0, 0, 0, 0, 1, 0},
+//            {0, 1, 1, 1, 1, 0},
+//            {0, 0, 0, 0, 0, 0}
+//        };
 
-        int startX = 0, startY = 0;
+
+        MazeGenerator mg = new MazeGenerator(21, 15);
+        int[][] maze = mg.generate();
+        mg.printMaze();
+
+        int startX = 1, startY = 1;
         int endX = 4, endY = 5;
 
         AStarSearch aStar = new AStarSearch(maze);

@@ -68,6 +68,15 @@ public class MazeGenerator {
         }
     }
 
+    public void printMaze() {
+        for (int[] row : maze) {
+            for (int cell : row) {
+                System.out.print(cell); // tường vs đường
+            }
+            System.out.println();
+        }
+    }
+
     public static void main(String[] args) {
         MazeGenerator mg = new MazeGenerator(21, 15);
         int[][] maze = mg.generate();
