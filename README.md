@@ -111,7 +111,7 @@ Chương trình sẽ hiển thị:
 - Số nút đi qua
 - Thời gian thực thi
 
-## 🎓 Phạm vi bài tập lớn
+## Phạm vi bài tập lớn
 
 Project này được phát triển trong phạm vi bài tập lớn môn học, với các yêu cầu:
 -  Tổ chức mã nguồn khoa học với các module rõ ràng
@@ -121,21 +121,6 @@ Project này được phát triển trong phạm vi bài tập lớn môn học,
 -  Module entity chứa các đối tượng dữ liệu
 -  Module constant quản lý tập trung messages và config
 -  Module ui/view tách biệt logic giao diện
-
-##  Cải tiến so với version trước
-
-### Version 2.0 (Hiện tại)
--  **Module Constants**: Quản lý tập trung messages, config
--  **Module UI/View**: Tách riêng logic giao diện
--  **Main.java đơn giản hơn**: Giảm từ ~150 dòng xuống ~70 dòng
--  **Dễ bảo trì**: Thay đổi messages/config không cần sửa nhiều file
--  **Separation of Concerns**: Mỗi module có trách nhiệm rõ ràng
--  **Reusability**: UI components có thể tái sử dụng
-
-### Version 1.0
--  Tổ chức cơ bản với 4 modules
--  Hỗ trợ 3 thuật toán tìm đường
--  Xử lý ngoại lệ cơ bản
 
 ##  Yêu cầu hệ thống
 
