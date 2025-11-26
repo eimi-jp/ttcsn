@@ -133,3 +133,19 @@ Project này được phát triển trong phạm vi bài tập lớn môn học,
 - Thuật toán DFS tìm nhanh hơn nhưng không đảm bảo tối ưu
 - Thuật toán A* cân bằng giữa tốc độ và tối ưu với Manhattan distance heuristic
 - Mê cung được sinh ngẫu nhiên mỗi lần chạy chương trình
+
+## Hướng dẫn đóng góp
+
+Bạn đọc có thể tham khảo, kiểm thử và đóng góp ý kiến cho nội dung báo cáo cũng như mã nguồn bằng cách tạo **Issue** theo các bước sau:
+
+
+1. Chọn tab `Issues` ở thanh điều hướng trên cùng.
+2. Nhấn nút `New issue` để tạo issue mới.
+3. Ở phần **Title**, ghi ngắn gọn nội dung góp ý hoặc lỗi phát hiện.
+4. Ở phần **Description**, mô tả chi tiết(optional):
+   - Ngữ cảnh hoặc phần báo cáo/liên quan trong README.
+   - Bước thực hiện (nếu là lỗi chạy chương trình).
+   - Kỳ vọng của bạn (mong muốn chỉnh sửa, bổ sung, cải thiện).
+5. Nhấn `Submit new issue` để gửi.
+
+Nhóm thực hiện sẽ tiếp nhận, phản hồi và cập nhật lại tài liệu/mã nguồn nếu phù hợp với định hướng của đề tài.
