@@ -114,4 +114,8 @@ public class ConsoleUI {
     public MazeVisualizer getMazeVisualizer() {
         return mazeVisualizer;
     }
+
+    public int getRunCount() {
+        return getValidIntInput(Messages.INPUT_RUN_COUNT, 1, Integer.MAX_VALUE);
+    }
 }

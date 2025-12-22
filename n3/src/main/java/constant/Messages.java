@@ -24,6 +24,7 @@ public class Messages {
     public static final String INPUT_HEIGHT = "  - Chiều cao (số lẻ, tối thiểu 5): ";
     public static final String INPUT_INVALID_NUMBER = "Vui lòng nhập một số nguyên hợp lệ";
     public static final String INPUT_OUT_OF_RANGE = "Vui lòng nhập số từ %d đến %d";
+    public static final String INPUT_RUN_COUNT = "Please enter the number of runs for benchmarking: ";
 
     // ==================== PROCESS MESSAGES ====================
     public static final String PROCESS_GENERATING_MAZE = "Đang tạo mê cung %dx%d...";
