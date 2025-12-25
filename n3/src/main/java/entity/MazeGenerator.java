@@ -35,6 +35,7 @@ public class MazeGenerator {
      */
     public int[][] generate() {
         carve(1, 1);
+        addLoops((width * height) / 20);
         return maze;
     }
 
@@ -71,6 +72,18 @@ public class MazeGenerator {
             int tmp = arr[i];
             arr[i] = arr[j];
             arr[j] = tmp;
+        }
+    }
+
+    public void addLoops(int count) {
+        for (int i = 0; i < count; i++) {
+            int x = rand.nextInt(width - 2) + 1;
+            int y = rand.nextInt(height - 2) + 1;
+
+            // Chỉ phá nếu là tường
+            if (maze[y][x] == WALL) {
+                maze[y][x] = PATH;
+            }
         }
     }
 
