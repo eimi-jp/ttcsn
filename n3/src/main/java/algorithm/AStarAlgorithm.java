@@ -46,7 +46,7 @@ public class AStarAlgorithm implements PathFinder {
     }
 
     private boolean isValid(int x, int y) {
-        return (x >= 0 && x < rows && y >= 0 && y < cols && maze[x][y] == 0);
+        return (y >= 0 && y < rows && x >= 0 && x < cols && maze[y][x] == 0);
     }
 
     @Override
@@ -57,9 +57,9 @@ public class AStarAlgorithm implements PathFinder {
         if (!isValid(endX, endY)) {
             throw new PathNotFoundException(constant.Messages.EXCEPTION_INVALID_END);
         }
-        
-        Node startNode = gridNodes[startX][startY];
-        Node endNode = gridNodes[endX][endY];
+
+        Node startNode = gridNodes[startY][startX];
+        Node endNode = gridNodes[endY][endX];
 
         startNode.gCost = 0;
         startNode.hCost = calculateHeuristic(startNode, endNode);
@@ -77,14 +77,14 @@ public class AStarAlgorithm implements PathFinder {
             closedSet.add(currentNode);
 
             for (int i = 0; i < 4; i++) {
-                int neighborX = currentNode.x + dx[i];
-                int neighborY = currentNode.y + dy[i];
+                int neighborRow = currentNode.x + dx[i];
+                int neighborCol = currentNode.y + dy[i];
 
-                if (!isValid(neighborX, neighborY)) {
+                if (!isValid(neighborCol, neighborRow)) {
                     continue;
                 }
 
-                Node neighborNode = gridNodes[neighborX][neighborY];
+                Node neighborNode = gridNodes[neighborRow][neighborCol];
 
                 if (closedSet.contains(neighborNode)) {
                     continue;
@@ -112,7 +112,7 @@ public class AStarAlgorithm implements PathFinder {
         List<Node> path = new ArrayList<>();
         Node currentNode = endNode;
         while (currentNode != null) {
-            path.add(currentNode);
+            path.add(new Node(currentNode.y, currentNode.x));
             currentNode = currentNode.parent;
         }
         Collections.reverse(path);
