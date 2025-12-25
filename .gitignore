@@ -21,3 +21,6 @@ Thumbs.db
 # Java
 *.class
 /.idea/
+
+.xlsl
+/~$benchmark_results.xlsx
